@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 var nums = [40, 100, 1, 5, 25, 10];
 var txt ="";
@@ -254,12 +254,12 @@ function myMove() {
                 right = true;
                 }
           } else {
-            pos++; 
-            elem.style.top = pos + "px"; 
-            elem.style.left = pos + "px"; 
-              if(pos == 350){
-              right = false;
-              }
+                pos++; 
+                elem.style.top = pos + "px"; 
+                elem.style.left = pos + "px"; 
+                if(pos == 350){
+                right = false;
+                }
           }
         }
 }
@@ -320,20 +320,20 @@ function promptBox(){
 
 function readTextFile(input){
     if(input!=null){
-    let file = input.files[0];
+        let file = input.files[0];
 
-    let reader = new FileReader();
+        let reader = new FileReader();
 
-    reader.readAsText(file);
-  
-    reader.onload = function() {
-      document.getElementById("firstAjax").innerHTML = reader.result;
-      //console.log(reader.result);
-    };
-  
-    reader.onerror = function() {
-        document.getElementById("firstAjax").innerHTML = reader.result;
-      //console.log(reader.error);
-    };
+        reader.readAsText(file);
+    
+        reader.onload = function() {
+            document.getElementById("firstAjax").innerHTML = reader.result;
+            //console.log(reader.result);
+        };
+    
+        reader.onerror = function() {
+            document.getElementById("firstAjax").innerHTML = reader.result;
+            //console.log(reader.error);
+        };
+    }
 }
-  }
