@@ -348,10 +348,9 @@
 
                     <div id="ajaxStuff">
                         <h4>AJAX DEV</h4>
-                        <p id="firstAjax">Change this content using the XMLHttpRequest 
-
-                            GETTING CORS error, thinking we need to have these files be on a SERVER in order for it to work
+                        <p id="firstAjax">Change this content using the XMLHttpRequest. This is on AWS server. 
                         </p>
+                        <button onclick="loadFile()">Load QFI.txt</button>
                         <p> Not AJAX but just a file reader. for ones local machine aka MINE</p>
                         <input type="file" onchange="readTextFile(this)">
                         <hr/>
@@ -361,14 +360,22 @@
                     <div id="jsonStuff">
                         <h4>JSON DEV</h4>
                         <p id="jsonFirst"> Sending Data --> JSON.stringify() , Receiving data --> JSON. parse()</p>
-                        <label for="jsonName">Enter Name</label><input type="text" id="jsonName" placeholder="John">
+                        <p> Below is an example of how to store on your local machine.</p>
+                        <label for="jsonName">Enter Name:  </label><input type="text" id="jsonName" placeholder="John">
                         <br/>
-                        <label for="jsonAge">Enter age</label><input type="number" id="jsonAge" placeholder="33">
+                        <label for="jsonAge">Enter age:  </label><input type="number" id="jsonAge" placeholder="33">
                         <br/>
-                        <label for="jsonCity">Enter city</label><input type="text" id="jsonCity" placeholder="John">
-                        <button onclick="testJSON()">Store New</button>
+                        <label for="jsonCity">Enter city:  </label><input type="text" id="jsonCity" placeholder="Spokane">
+                        <br/>
+                        <label for="jsonKey">Enter JSON name value:  </label><input type="text" id="jsonKey" placeholder="JSON1">
+
+                        <button onclick="JSONstore()">Store New</button>
+                        <br/>
                         <p id="jsonTest"></p>
-                        
+                        <br/>
+                        <label>Get JSON Object using key/name input above</label>
+                        <button onclick="JSONget()">Get JSON</button>
+
                     </div>
                 
                 </body>

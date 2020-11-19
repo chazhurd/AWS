@@ -209,22 +209,18 @@ class Cars{
         document.getElementById("carCreations").innerHTML += myCars[x].getYear().lastIndexOf("1") + " <br/>";
     }
 }
-
-function openFile(myCallBack){
-        /*
-        let req = new XMLHttpRequest();
-        req.open('GET',"mycars.html");
-        req.onload = function(){
-            if(req.status == 200){
-                myCallBack(this.responseText);
-            } else {
-                myCallBack("Error:" + req.status);
-            }
-            req.send();
-            this is givin me errors for some reason. Code copied and also in html
-        }*/
-        myCallBack("Bonjour");
+function loadFile() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("firstAjax").innerHTML =
+            this.responseText;
+          }
+        };
+        xhttp.open("GET", "qfi.txt", true);
+        xhttp.send();
 }
+
 function myDisplayer(some){
         //technically just for async/CallBack annd beyond stuff
         document.getElementById("async").innerHTML = some;
@@ -336,4 +332,30 @@ function readTextFile(input){
             //console.log(reader.error);
         };
     }
+}
+var myObjec, myJSON, text, objec;
+
+function JSONstore(){
+    var tName = document.getElementById("jsonName").value;
+    var tAge = document.getElementById("jsonAge").value;
+    var tCity = document.getElementById("jsonCity").value;
+    var jName = document.getElementById("jsonKey").value;
+    if(tName || tAge || tCity || jName != null){
+    myObjec = {name: tName, age: tAge, city: tCity};
+    //JSON ARRAY --> {"employees":[ "John", "Anna", "Peter" ]}
+    myJSON = JSON.stringify(myObjec);
+    localStorage.setItem(jName, myJSON);
+    document.getElementById("jsonTest").innerHTML = "Stored Person from:  " + myObjec.city.toString();
+    }else{
+        alert("All inputs must be filled");
+    }
+}
+
+function JSONget(){
+    jName = document.getElementById("jsonKey").value;
+    text = localStorage.getItem(jName);
+    obj = JSON.parse(text);
+    document.getElementById("jsonTest").innerHTML = obj.name + ",  " + obj.age;
+
+    
 }
