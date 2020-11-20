@@ -349,7 +349,7 @@
                     <div id="ajaxStuff">
                         <h4>AJAX DEV</h4>
                         <p id="firstAjax">Change this content using the XMLHttpRequest. This is on AWS server. 
-                        </p>
+                        Most likely still getting CORS error :?</p>
                         <button onclick="loadFile()">Load QFI.txt</button>
                         <p> Not AJAX but just a file reader. for ones local machine aka MINE</p>
                         <input type="file" onchange="readTextFile(this)">
@@ -375,7 +375,23 @@
                         <br/>
                         <label>Get JSON Object using key/name input above</label>
                         <button onclick="JSONget()">Get JSON</button>
-
+                        <br>
+                        <br/>
+                        <p>Using JSON with PHP Server</p>
+                        <button onclick="jsonPHP()">PHP GET</button>
+                        <script>
+                            function jsonPHP(){
+                                var xmlhttp = new XMLHttpRequest();
+                                xmlhttp.onreadystatechange = function() {
+                                    if (this.readyState == 4 && this.status == 200) {
+                                        var myObj = JSON.parse(this.responseText);
+                                        document.getElementById("jsonTest").innerHTML = myObj.name;
+                                    }
+                                };
+                                xmlhttp.open("GET", "php-demo.php", true);
+                                xmlhttp.send();
+                            }
+                        </script>
                     </div>
                 
                 </body>

@@ -352,10 +352,12 @@ function JSONstore(){
 }
 
 function JSONget(){
+    var xy;
     jName = document.getElementById("jsonKey").value;
     text = localStorage.getItem(jName);
     obj = JSON.parse(text);
-    document.getElementById("jsonTest").innerHTML = obj.name + ",  " + obj.age;
+    for(xy in obj){
+    document.getElementById("jsonTest").innerHTML += " - " + obj[xy] ; 
 
-    
+    }
 }
