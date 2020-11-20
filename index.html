@@ -274,6 +274,7 @@
                         <p id="demo5"></p>
 
                         <script>
+                            /*
                         function myDisplayer2(some) {
                         document.getElementById("demo5").innerHTML = some;
                         }
@@ -290,7 +291,7 @@
                             console.log(this.responseText);
                             }
 
-                        getFile2(myDisplayer2); 
+                        getFile2(myDisplayer2); */
                         </script>
                         <p>Find different elements of the DOM</p>
                         <button onclick="playDOM()">DOC.GET</button>
@@ -377,7 +378,7 @@
                         <button onclick="JSONget()">Get JSON</button>
                         <br>
                         <br/>
-                        <p>Using JSON with PHP Server</p>
+                        <p>Using JSON with PHP Server (must be on live site to work)</p>
                         <button onclick="jsonPHP()">PHP GET</button>
                         <script>
                             function jsonPHP(){
@@ -392,6 +393,10 @@
                                 xmlhttp.send();
                             }
                         </script>
+                        <hr/>
+                        <p>Using JSONP, this works around that PESKY CORS</p>
+                        <script src="php-demo.php"></script>
+
                     </div>
                 
                 </body>
