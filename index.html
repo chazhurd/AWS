@@ -372,13 +372,13 @@
 
                         <button onclick="JSONstore()">Store New</button>
                         <br/>
-                        <p id="jsonTest"></p>
+                        <p id="jsonTest">This is where the data should be changed. Will need further tutorials about JSON and PHP </p>
                         <br/>
                         <label>Get JSON Object using key/name input above</label>
                         <button onclick="JSONget()">Get JSON</button>
                         <br>
                         <br/>
-                        <p>Using JSON with PHP Server (must be on live site to work)</p>
+                        <p>Using JSON with PHP Server</p>
                         <button onclick="jsonPHP()">PHP GET</button>
                         <script>
                             function jsonPHP(){
@@ -397,10 +397,31 @@
                         <p>Using JSONP, this works around that PESKY CORS. Get the PHP file names jsonp_demo, loaded upon entry</p>
                         <script>
                             function myFunc(mObj){
-                                window.document.getElementById("jsonTest").innerHTML = mObj.name;
+                                document.getElementById("jsonTest").innerHTML = mObj.name;
                             }
                         </script> 
                         <script src="demo_jsonp.php"></script>
+                        <br/>
+                        <h3>WEB API</h3>
+                        <p>Application Programming Interface</p>
+                        <button onclick="getLoc()">Coordinates</button>
+                        <p id="coords"></p>
+                        <script>
+                            var x = document.getElementById("coords");
+
+                            function getLocation() {
+                              if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(showPosition);
+                              } else {
+                                x.innerHTML = "Geolocation is not supported by this browser.";
+                              }
+                            }
+                            
+                            function showPosition(position) {
+                              x.innerHTML = "Latitude: " + position.coords.latitude +
+                              "<br>Longitude: " + position.coords.longitude;
+                            }
+                        </script>
 
                     </div>
                 
