@@ -17,7 +17,7 @@
             </style>
             <script>
                 
-                //this cookie example works with firefox NOT chrome.... and expires when tab is closed....
+                //cookie works well. not locally but live. 
                 function setCookie(cname,cvalue,exdays) {
                     var d = new Date();
                     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -393,7 +393,7 @@
                                 xmlhttp.send();
                             }
                         </script>
-                        <hr/>
+                        <br>
                         <p>Using JSONP, this works around that PESKY CORS. Get the PHP file names jsonp_demo, loaded upon entry</p>
                         <script>
                             function myFunc(mObj){
