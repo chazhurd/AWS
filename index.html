@@ -361,7 +361,7 @@
                     <div id="jsonStuff">
                         <h4>JSON DEV</h4>
                         <p id="jsonFirst"> Sending Data --> JSON.stringify() , Receiving data --> JSON. parse()</p>
-                        <p> Below is an example of how to store on your local machine.</p>
+                        <p> Below is an example of how to store on your local machine and to store through session, session is lost after browser is closed</p>
                         <label for="jsonName">Enter Name:  </label><input type="text" id="jsonName" placeholder="John">
                         <br/>
                         <label for="jsonAge">Enter age:  </label><input type="number" id="jsonAge" placeholder="33">
@@ -370,12 +370,14 @@
                         <br/>
                         <label for="jsonKey">Enter JSON name value:  </label><input type="text" id="jsonKey" placeholder="JSON1">
 
-                        <button onclick="JSONstore()">Store New</button>
+                        <button onclick="JSONstore()">Store Locally</button>
+                        <button onclick="storeSesh()">Store Session</button>
                         <br/>
                         <p id="jsonTest">This is where the data should be changed. Will need further tutorials about JSON and PHP </p>
                         <br/>
                         <label>Get JSON Object using key/name input above</label>
                         <button onclick="JSONget()">Get JSON</button>
+                        <button onclick="seshGet()">Get Sesh</button>
                         <br>
                         <br/>
                         <p>Using JSON with PHP Server</p>
@@ -404,8 +406,8 @@
                         <br/>
                         <h3>WEB API</h3>
                         <p>Application Programming Interface</p>
-                        <button onclick="getLoc()">Coordinates</button>
-                        <p id="coords"></p>
+                        <button onclick="getLocation()">Coordinates</button>
+                        <p id="coords">The browser has a location API built in</p>
                         <script>
                             var x = document.getElementById("coords");
 

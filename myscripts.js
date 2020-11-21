@@ -361,3 +361,29 @@ function JSONget(){
 
     }
 }
+
+function storeSesh(){
+    var tName = document.getElementById("jsonName").value;
+    var tAge = document.getElementById("jsonAge").value;
+    var tCity = document.getElementById("jsonCity").value;
+    var jName = document.getElementById("jsonKey").value;
+    if(tName || tAge || tCity || jName != null){
+    myObjec = {name: tName, age: tAge, city: tCity};
+    //JSON ARRAY --> {"employees":[ "John", "Anna", "Peter" ]}
+    myJSON = JSON.stringify(myObjec);
+    sessionStorage.setItem(jName, myJSON);
+    document.getElementById("jsonTest").innerHTML = "Stored Person from:  " + myObjec.city.toString();
+    }else{
+        alert("All inputs must be filled");
+    }
+}
+
+function seshGet(){
+    var xy;
+    jName = document.getElementById("jsonKey").value;
+    text = sessionStorage.getItem(jName);
+    obj = JSON.parse(text);
+    for(xy in obj){
+    document.getElementById("jsonTest").innerHTML += " - " + obj[xy] ; 
+    }
+}
