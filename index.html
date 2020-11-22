@@ -15,6 +15,8 @@
                 background-color: red;
               }
             </style>
+            <script src="demo_jsonp.php"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script>
                 
                 //cookie works well. not locally but live. 
@@ -402,7 +404,6 @@
                                 document.getElementById("jsonTest").innerHTML = mObj.name;
                             }
                         </script> 
-                        <script src="demo_jsonp.php"></script>
                         <br/>
                         <h3>WEB API</h3>
                         <p>Application Programming Interface</p>
@@ -424,7 +425,53 @@
                               "<br>Longitude: " + position.coords.longitude;
                             }
                         </script>
+                        <hr/>
+                    <div id="jquery">
+                        <h1>JQUERY</h1>
+                        <h2>Finding HTML Elements by Id</h2>
+                        <p>Using JQUERY to find and maniplate DOM elements</p>
+                        <p id="id01">Hello World!</p>
+                        <p id="id02">Hello Sweden!</p>
+                        <p id="id03">Hello Japan!</p>
+                        <br>
+                        <label>Multiply using JQUERY</label>
+                        <p id="qA">4</p> x <p id="qB">5</p>
+                        <br/>
+                        <button onclick="textSelJQ()">MULT</button>
 
+                        <p id="qOut"> A + B = </p>
+                        Change style using JQUERY
+                        <button onclick="cssJQ()">to 35px</button>
+
+                        <p id="demoJQUERY"></p>
+                        <p id="numJQ"></p>
+                        <script>
+                            function cssJQ(){
+                                var myElement = $("#qOut");
+                                myElement.css("font-size","35px");
+                            }
+                            $(document).ready(function() {
+                                var allParagraphs = $("p");
+                                var allClassesNamedIntro = $(".first");
+                                var allParagraphsInIntro =$("p.first");
+
+                                $("#numJQ").text("The amount of paragprahs in the doc is " + allParagraphs.length);
+                                var myElements = $("#id01");
+                                $("#demoJQUERY").text("The text from the id01 paragraph is: " + myElements[0].innerHTML);
+                            });
+
+                            function textSelJQ(){
+                                var myElementA = $("#qA");
+                                var myElementB = $("#qB");
+                                var numA = parseInt(myElementA.text());
+                                var numB = parseInt(myElementB.text());
+                                var total = myElementA.text() * myElementB.text();
+                                $("#qOut").text("A + B = " + total); 
+                            }
+
+                        </script>
+
+                    </div>
                     </div>
                 
                 </body>

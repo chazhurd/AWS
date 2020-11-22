@@ -100,8 +100,11 @@ function randomSort(){
 function genRandomNum(){
         var min = document.getElementById("rand1").value;
         var max = document.getElementById("rand2").value;
-        var rando = Math.floor(Math.random() * (max - min + 1) ) + min;
-        document.getElementById("arrayStuff").innerHTML ="Random Number between: " +min +" and "+ max +" is " + rando;
+        var rand1 = max - min;
+        var rand2 = Math.random()*rand1;
+        var rand3 = Math.floor(rand2);
+        var rand4 = parseInt(rand3) + parseInt(min);
+        document.getElementById("arrayStuff").innerHTML ="Random Number between: " +min +" and "+ max +" is " + rand4;
 }
 function checkAge(){
         var age = document.getElementById("age").value;
